@@ -1,4 +1,4 @@
-package Easy.twosum;
+package twosum;
 
 class TwoSum {
 
