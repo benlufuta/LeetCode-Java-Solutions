@@ -1,29 +1,23 @@
-import java.util.HashMap;
-
 class Solution {
     public boolean containsDuplicate(int[] nums) {
-        
-        /*
-            1. Solution using HashMap
+         /*
+            1. Solution using HashSet
             Time complexity: O(n)
             Space complexity: O(n)
         */
 
-        //Map to store found numbers as keys.
-        HashMap <Integer, Boolean> foundNums = new HashMap<>();
+        //Set to store unique found numbers.
+        HashSet <Integer> foundNums = new HashSet<>();
 
-        for (int i = 0; i < nums.length; i++){
+        for (int num: nums) {
 
-            //If key is found, then return true because 
-            //the current number has already been added
-            //as a key therefore return true.
-            if (foundNums.containsKey(nums[i])){
+            //If found, then return true because 
+            //the current number has already been added set.
+            if (!foundNums.add(num)){
 
                 return true;
 
             }
-                //If not found, then add to map.
-                foundNums.put(nums[i], true);
         }
 
         return false;
