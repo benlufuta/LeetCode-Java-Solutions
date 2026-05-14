@@ -57,11 +57,11 @@ The goal is not just to solve problems, but to:
 
 ## Progress
 
-| Difficulty | Count |
-|------------|-------|
-| Easy       | 6     |
-| Medium     | 0     |
-| Hard       | 0     |
+| Difficulty | Count  |
+|------------|--------|
+| Easy       | 12     |
+| Medium     | 0      |
+| Hard       | 0      |
 
 *(Will be updated as I progress)*
 
