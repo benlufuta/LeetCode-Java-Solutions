@@ -59,7 +59,7 @@ The goal is not just to solve problems, but to:
 
 | Difficulty | Count  |
 |------------|--------|
-| Easy       | 13     |
+| Easy       | 14     |
 | Medium     | 1      |
 | Hard       | 0      |
 
