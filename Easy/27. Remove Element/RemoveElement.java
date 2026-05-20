@@ -2,8 +2,8 @@ public class RemoveElement {
     
     /*  
         Speed and Space Efficient Solution.
-        Time Complexity:
-        Space Complexity: 
+        Time Complexity: O(N)
+        Space Complexity: O(1)
         Idea: Using two pointers from both ends to swap unwanted elements to the back in a single pass.
     */
     public int removeElement(int[] nums, int val) {
