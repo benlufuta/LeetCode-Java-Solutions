@@ -2,17 +2,28 @@ public class ReverseString {
 
     public void reverseString(char[] s) {
 
-        int p1 = 0;
-        int p2 = s.length - 1;
+        /*
+            Pattern: Two Pointers
+            Time Complexity: O(n)
+            Space Complexity: O(1)
 
-        while (p1 != s.length / 2) {
+            Idea: Start with left = 0 and right = length - 1. 
+            While left < right, swap their values and move inward. 
+            Stop when the pointers meet or cross.
+        
+        */
 
-            char temp = s[p1];
-            s[p1] = s[p2];
-            s[p2] = temp;
+        int left = 0;
+        int right = s.length - 1;
 
-            p1++;
-            p2--;
+        while (left < right) {
+
+            char temp = s[left];
+            s[left] = s[right];
+            s[right] = temp;
+
+            left++;
+            right--;
         }
         
     }
