@@ -2,25 +2,36 @@ public class MoveZeroes {
 
     public void moveZeroes(int[] nums) {
 
-        int p1 = 0;
-        int p2 = 0;
+        /*
+            Pattern: Two Pointers
+            Time Complexity: O(n)
+            Space Complexity: O(1)
 
-        while (p1 < nums.length){
+            Idea: Both pointers start at the same end because the left pointer tracks the next position for a non-zero value, 
+            while the right pointer finds the next non-zero value to swap into a zero's position (current left).
 
-            if (nums[p1] != 0){
+        */
 
-                nums[p2] = nums[p1];
+        int left = 0; //Slow Pointer.
+        int right = 0; //Fast Pointer
 
-                if (p1 != p2 ) {nums[p1] = 0;} //too prevent overriding values.
+        while (right < nums.length){
 
-                p2++;
+            if (nums[right] != 0){
 
-            } 
+                //If right has found a non-zero, please swap with left, and increase left by one.
+                int temp = nums[left];
                 
-                p1++; 
-                
+                nums[left] = nums[right];
+                nums[right] = temp;
 
-            } 
+                left++;
+            }
+
+            //Move right by one everytime.
+            right++;
+        }
+
     }
     
 }
