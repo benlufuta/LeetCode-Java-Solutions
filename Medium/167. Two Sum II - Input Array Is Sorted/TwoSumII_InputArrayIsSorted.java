@@ -1,75 +1,45 @@
 public class TwoSumII_InputArrayIsSorted {
-    
-
-    /*
-
-    Brute Force Solution: Works but not as efficient in terms of speed.
-    Time: O(n²)
-    Space: O(1)
-
-    Idea: Check every possible pair in the array. If the pair adds up to the target, return their indices.
-    
-    */
-
-    public int[] twoSumBruteForce(int[] numbers, int target) {
-
-        for (int i = 1; i < numbers.length; i++) {
-
-            for (int j = 0; j < i; j++){
-            
-                if ((numbers[i] + numbers[j]) == target){
-
-                    return new int [] {j+1, i+1};
-
-                } 
-
-            }
-        }
-
-        return new int [] {};
-    }
-
 
     public int[] twoSum(int[] numbers, int target) {
 
         /*
 
-            Efficient Solution.
-            Time Complexity: O(N)
+            Pattern: Two Pointers
+            Time Complexity: O(n)
             Space Complexity: O(1)
 
-            Idea:use the sorted property with two pointers moving from ends to find the target sum efficiently.
+            Idea:Because the values are sorted, the two-pointer technique is effective.
+            We can adjust the sum deterministically: move the left pointer right to increase the sum,
+            or move the right pointer left to decrease it, allowing us to efficiently search for the target.
         
          */
 
         // First index starts at the beginning, and second index starts at the end of the array.
-        int p1 = 0;
-        int p2 = numbers.length - 1;
+        int left = 0;
+        int right = numbers.length - 1;
 
         //Loop through array as long as index one is smaller than second index.
-        while (p1 < p2) {
+        while (left < right) {
             
                 // If the sum of the first and second indices equals the target,
                 // return those indices plus 1 as required.
-                if ((numbers[p1] + numbers[p2]) == target){
+                if ((numbers[left] + numbers[right]) == target){
 
-                    return new int [] {p1+1, p2+1};
+                    return new int [] {left+1, right+1};
 
                 } 
                 //If the sum is too large, move the larger value inward.
-                else if ((numbers[p1] + numbers[p2]) > target){
+                else if ((numbers[left] + numbers[right]) > target){
 
-                    p2--;
+                    right--;
                 } 
                 //If the sum is too small, move the smaller value inward. 
                 else {
 
-                    p1++;
+                    left++;
                 }
-
             } 
 
-        //Return an empty array if no solution was found.
         return new int [] {};
 
     }
