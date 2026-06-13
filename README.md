@@ -60,7 +60,7 @@ The goal is not just to solve problems, but to:
 | Difficulty | Count  |
 |------------|--------|
 | Easy       | 14     |
-| Medium     | 4      |
+| Medium     | 5      |
 | Hard       | 0      |
 
 *(Will be updated as I progress)*
